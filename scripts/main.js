@@ -64,6 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Then, initialize the application logic which will populate the content area
     if (typeof App !== 'undefined') {
         window.app = new App();
+        // The constructor in App will now call the async init method.
+        // This is the original flow.
+        window.app.init();
     } else {
         console.error("App class not found. Make sure it's exported from scripts.js");
     }
